@@ -1,4 +1,4 @@
-package com.athensoft.ecomm.controller;
+package com.athensoft.ecomm.controller.global;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
