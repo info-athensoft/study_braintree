@@ -10,4 +10,11 @@ public class GlobalController {
 	public String gotoTest(){
 		return "test";
 	}
+	
+	@RequestMapping("/checkout.do")
+	public String gotoCheckout(){
+		System.out.println("entering checkout.do ...");
+		return "checkout";
+	}
+		
 }
