@@ -28,12 +28,12 @@ public class BraintreeController {
 		Map<String,Object> model = mav.getModel();
 		
 		//data
-		ClientTokenRequest clientTokenRequest = new ClientTokenRequest().customerId("tester1cust");
+		ClientTokenRequest clientTokenRequest = new ClientTokenRequest().customerId("test2cust");
 		String clientToken = gateway.clientToken().generate(clientTokenRequest);
 		model.put("clientToken", clientToken);
 		
 		//view
-		String viewName = "client";
+		String viewName = "getpaid/braintree";
 		mav.setViewName(viewName);
 		
 		System.out.println("exiting client_token.do ...");

@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form id="checkout" method="post" action="checkout.do">
+<form id="checkout" method="post" action="create_transaction.do">
   <div id="payment-form"></div>
   <input type="submit" value="Pay $10">
 </form>

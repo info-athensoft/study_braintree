@@ -14,7 +14,7 @@ public class GlobalController {
 	@RequestMapping("/checkout.do")
 	public String gotoCheckout(){
 		System.out.println("entering checkout.do ...");
-		return "checkout";
+		return "getpaid/checkout";
 	}
 		
 }
