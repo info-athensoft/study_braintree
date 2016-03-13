@@ -39,4 +39,44 @@ public class BraintreeController {
 		System.out.println("exiting client_token.do ...");
 		return mav;
 	}
+	
+	@RequestMapping("/client_token_dropui.do")
+	public ModelAndView doCheckout2() {
+		System.out.println("entering client_token_dropui.do ...");
+		
+		ModelAndView mav = new ModelAndView();
+		Map<String,Object> model = mav.getModel();
+		
+		//data
+		ClientTokenRequest clientTokenRequest = new ClientTokenRequest().customerId("test2cust");
+		String clientToken = gateway.clientToken().generate(clientTokenRequest);
+		model.put("clientToken", clientToken);
+		
+		//view
+		String viewName = "getpaid/braintree-dropui";
+		mav.setViewName(viewName);
+		
+		System.out.println("exiting client_token_dropui.do ...");
+		return mav;
+	}
+	
+	@RequestMapping("/dropin.do")
+	public ModelAndView doCheckout3() {
+		System.out.println("entering dropin.do ...");
+		
+		ModelAndView mav = new ModelAndView();
+		Map<String,Object> model = mav.getModel();
+		
+		//data
+		ClientTokenRequest clientTokenRequest = new ClientTokenRequest().customerId("test2cust");
+		String clientToken = gateway.clientToken().generate(clientTokenRequest);
+		model.put("clientToken", clientToken);
+		
+		//view
+		String viewName = "dropin";
+		mav.setViewName(viewName);
+		
+		System.out.println("exiting client_token_dropui.do ...");
+		return mav;
+	}
 }

@@ -10,7 +10,8 @@
 <body>
 <form id="checkout" method="post" action="create_transaction.do">
   <div id="payment-form"></div>
-  <input type="submit" value="Pay $10">
+  <input name="amt" id="amt"/>
+  <input type="submit" value="Payment">
 </form>
 
 <hr/>

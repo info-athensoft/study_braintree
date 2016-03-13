@@ -41,9 +41,18 @@ public class GetPaidController {
 	public ModelAndView createTransaction(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mav = new ModelAndView();
 		
+		
+		//test
+		System.out.print("payment_method_nonce:\t");
+		System.out.println((String)request.getParameter("payment_method_nonce"));
+		
+		System.out.print("amt:\t");
+		String strAmt = (String)request.getParameter("amt");
+		System.out.println(strAmt);
+		
 		//data		
 		TransactionRequest transactionRequest = new TransactionRequest()
-	        .amount(new BigDecimal("1000.00"))
+	        .amount(new BigDecimal(strAmt))
 //	        .paymentMethodToken("ft7sgr")	//by token at vault
 	        .customerId("test2cust")	//by token at vault
 	        .creditCard()
