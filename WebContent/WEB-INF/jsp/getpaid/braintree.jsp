@@ -9,7 +9,7 @@
   <body>
     <h1>Braintree Credit Card Transaction Form</h1>
     <div>
-      <form action="create_transaction.do" method="POST" id="braintree-payment-form">
+       <form action="create_transaction.do" method="POST" id="braintree-payment-form">
         <p>
           <label>Card Number</label>
           <input type="text" size="20" autocomplete="off" data-encrypted-name="number" value="4111111111111111"/>
@@ -23,7 +23,7 @@
           <input type="text" size="2" data-encrypted-name="month" value="01"/> / <input type="text" size="4" data-encrypted-name="year" value="2020"/>
         </p>
         <input type="submit" id="submit" />
-      </form>
+      </form>         
     </div>
     <script type="text/javascript" src="https://js.braintreegateway.com/v1/braintree.js"></script>
     <script type="text/javascript">

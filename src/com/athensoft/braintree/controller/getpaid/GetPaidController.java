@@ -41,18 +41,9 @@ public class GetPaidController {
 	public ModelAndView createTransaction(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mav = new ModelAndView();
 		
-		
-		//test
-		System.out.print("payment_method_nonce:\t");
-		System.out.println((String)request.getParameter("payment_method_nonce"));
-		
-		System.out.print("amt:\t");
-		String strAmt = (String)request.getParameter("amt");
-		System.out.println(strAmt);
-		
 		//data		
 		TransactionRequest transactionRequest = new TransactionRequest()
-	        .amount(new BigDecimal(strAmt))
+	        .amount(new BigDecimal("1000.00"))
 //	        .paymentMethodToken("ft7sgr")	//by token at vault
 	        .customerId("test2cust")	//by token at vault
 	        .creditCard()
@@ -68,7 +59,7 @@ public class GetPaidController {
 	    Result<Transaction> result = gateway.transaction().sale(transactionRequest);
 	    
 	    boolean isSuccess = result.isSuccess();
-	    String resultMessage = "";
+	    String resultMessage = ""; //result.getMessage();//
 	    if(isSuccess){
 	    	System.out.println("Success");
 	    	resultMessage = "Success ID:"+result.getTarget().getId();
@@ -84,9 +75,6 @@ public class GetPaidController {
 //	    System.out.println(paymentMethod instanceof CreditCard);
 	    
 	    //System.out.println("payment_method_nonce:"+request.getParameter("paymentMethodNonce"));
-	    
-	    
-	    
 	    
 	    //System.out.println("all params:\n"+request.getParameterNames());
 		
