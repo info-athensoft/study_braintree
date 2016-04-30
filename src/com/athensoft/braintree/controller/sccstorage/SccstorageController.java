@@ -54,9 +54,9 @@ public class SccstorageController {
 		String first_name = request.getParameter("first_name");
 		System.out.println(first_name);
 	
-		System.out.print("number:\t");
-		String number = request.getParameter("number");
-		System.out.println(number);
+		System.out.print("year:\t");
+		String year = request.getParameter("year");
+		System.out.println(year);
 		
 		CustomerRequest customerRequest = new CustomerRequest()
                 .firstName(request.getParameter("first_name"))
@@ -65,10 +65,10 @@ public class SccstorageController {
                     .billingAddress()
                         .postalCode(request.getParameter("postal_code"))
                         .done()
-                        .number(request.getParameter("number"))
-        	            .cvv(request.getParameter("cvv"))
-        	            .expirationMonth(request.getParameter("month"))
-        	            .expirationYear(request.getParameter("year"))
+                    .number(request.getParameter("number"))
+        	        .cvv(request.getParameter("cvv"))
+        	        .expirationMonth(request.getParameter("month"))
+        	        .expirationYear(request.getParameter("year"))
                     .done();
 
             Result<Customer> result = gateway.customer().create(customerRequest);
