@@ -4,9 +4,9 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-  		classpath:com/adogo/config/application-context.xml
-  		classpath:com/adogo/config/dao-context.xml
-  		classpath:com/adogo/config/service-context.xml
+  		classpath:com/athensoft/ecomm/config/application-context.xml
+  		classpath:com/athensoft/ecomm/config/dao-context.xml
+  		classpath:com/athensoft/ecomm/config/service-context.xml
   		<!-- classpath:com/adogo/config/adogo-servlet.xml  -->
   	</param-value>
 	</context-param>
@@ -15,30 +15,16 @@
 	</listener>
 	<servlet>
 		<description></description>
-		<display-name>adogo</display-name>
-		<servlet-name>adogo</servlet-name>
+		<display-name>braintree</display-name>
+		<servlet-name>braintree</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>adogo</servlet-name>
-		<url-pattern>/</url-pattern>
+		<servlet-name>braintree</servlet-name>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 
-	<error-page>
-		<error-code>400</error-code>
-		<location>/400.jsp</location>
-	</error-page>
-
-	<error-page>
-		<error-code>404</error-code>
-		<location>/404.jsp</location>
-	</error-page>
-<!-- 
-	<error-page>
-		<error-code>500</error-code>
-		<location>/500.jsp</location>
-	</error-page>
- -->
+	
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>index.html</welcome-file>
