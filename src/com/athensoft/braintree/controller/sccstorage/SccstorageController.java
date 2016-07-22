@@ -50,13 +50,10 @@ public class SccstorageController {
 	@RequestMapping("sccstorage_result.do")
 	public ModelAndView sccstorageResult(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mav = new ModelAndView();		
-		System.out.print("first_name:\t");
-		String first_name = request.getParameter("first_name");
-		System.out.println(first_name);
-	
-		System.out.print("number:\t");
-		String number = request.getParameter("number");
-		System.out.println(number);
+		
+		//System.out.print("number:\t");
+		//String number = request.getParameter("number");
+		//System.out.println(number);
 		
 		CustomerRequest customerRequest = new CustomerRequest()
                 .firstName(request.getParameter("first_name"))
@@ -76,7 +73,6 @@ public class SccstorageController {
             if (result.isSuccess()) {
             	strMsg =  "Customer created with name: " + result.getTarget().getFirstName() + " " + result.getTarget().getLastName();
               } else {
-
             	  strMsg =  "Error: " + result.getMessage();
               }
             
