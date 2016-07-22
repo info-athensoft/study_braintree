@@ -62,6 +62,7 @@ public class GetPaidTrController {
 	            .submitForSettlement(true)
 	            .done();
 	
+		
 		String trData = gateway.transparentRedirect().trData(transactionRequest, "http://localhost:8080/study_braintree/getpaid_tr_result.do");
 		
         Map<String,Object> data = mav.getModel();
