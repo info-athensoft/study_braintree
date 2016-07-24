@@ -74,7 +74,8 @@ public class SccstorageController {
             Result<Customer> result = gateway.customer().create(customerRequest);
             String strMsg = "";
             if (result.isSuccess()) {
-            	strMsg =  "Customer created with name: " + result.getTarget().getFirstName() + " " + result.getTarget().getLastName();
+            	strMsg =  "Customer created with Name: " + result.getTarget().getFirstName() + " " + result.getTarget().getLastName() + ", ID: " + result.getTarget().getId();
+            	strMsg += " Token: "+ result.getTarget().getPaymentMethods().get(0).getToken();
               } else {
             	  strMsg =  "Error: " + result.getMessage();
               }
